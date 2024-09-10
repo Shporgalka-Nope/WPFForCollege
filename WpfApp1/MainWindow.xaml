@@ -6,7 +6,49 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+    <DockPanel>
+        <Button DockPanel.Dock="Top" Height="15"/>
+        <Button DockPanel.Dock="Top" Height="15"/>
+        <Label Content="Vertical text">
+            <Label.LayoutTransform>
+                <RotateTransform Angle="270"/>
+            </Label.LayoutTransform>
+        </Label>
+        <Button DockPanel.Dock="Left" Width="150"/>
+        <Button DockPanel.Dock="Right" Width="165"/>
+        <Button DockPanel.Dock="Bottom" Height="150"/>
+        <TabControl>
+            <TabItem Height="20" Header="Tab 1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="1" Grid.Row="1" Content="Button column 1 row 1"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Tab 2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Button Grid.RowSpan="2" Grid.Column="1" Grid.Row="1" Content="But Grid Span"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
 </Window>
