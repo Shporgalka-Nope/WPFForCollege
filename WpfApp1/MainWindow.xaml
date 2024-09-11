@@ -14,9 +14,15 @@
                 <RotateTransform Angle="270"/>
             </Label.LayoutTransform>
         </Label>
-        <Button DockPanel.Dock="Left" Width="150"/>
-        <Button DockPanel.Dock="Right" Width="165"/>
-        <Button DockPanel.Dock="Bottom" Height="150"/>
+        <TabControl>
+            <TabItem Content="Tab 1"/>
+        </TabControl>
+        <TabControl DockPanel.Dock="Right" Width="100">
+            <TabItem Content="Tab 1"/>
+        </TabControl>
+        <TabControl DockPanel.Dock="Bottom" Height="120">
+            <TabItem Content="Bottom tab"/>
+        </TabControl>
         <TabControl>
             <TabItem Height="20" Header="Tab 1">
                 <Grid>
@@ -26,11 +32,11 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
+                        <ColumnDefinition/> 
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="1" Grid.Row="1" Content="Button column 1 row 1"/>
+                    <Button Grid.Column="0" Grid.RowSpan="3" Content="Button Left"/>
+                    <Button Grid.Column="1" Grid.RowSpan="3" Content="Button Right"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Tab 2">
@@ -47,6 +53,45 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Button Grid.RowSpan="2" Grid.Column="1" Grid.Row="1" Content="But Grid Span"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Tab 3">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Row="1" Grid.RowSpan="6">
+                        <Label Content="Логин" FontSize="14"/>
+                        <Label Content="Пароль" FontSize="14"/>
+                        <Label Content="Имя" FontSize="14"/>
+                        <Label Content="Фамилия" FontSize="14"/>
+                        <Label Content="Дата Рождения" FontSize="14"/>
+                        <Label Content="Образование" FontSize="14"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="6">
+                        <TextBox Name="tb_Log" FontSize="18" Height="28" VerticalAlignment="Center"/>
+                        <TextBox Name="tb_Pass" FontSize="18" Height="28" VerticalContentAlignment="Center"/>
+                        <TextBox Name="tb_Name" FontSize="18" Height="28" VerticalContentAlignment="Center"/>
+                        <TextBox Name="tb_LName" FontSize="18" Height="28" VerticalContentAlignment="Center"/>
+                        <TextBox Name="tb_Bd" FontSize="18" Height="28" VerticalContentAlignment="Center"/>
+                        <TextBox Name="tb_Edu" FontSize="18" Height="28" VerticalContentAlignment="Center"/>
+                    </StackPanel>
+                    <Button Name="bt_finish" Content="Готово" Grid.Row="7" Click="result_onCkick"/>
+                    <TextBlock Name="Result" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="5"/>
                 </Grid>
             </TabItem>
         </TabControl>

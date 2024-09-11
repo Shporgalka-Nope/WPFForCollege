@@ -16,9 +16,22 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
+        TextBlock toSend;
+        TextBox[] textBoxes;
         public MainWindow()
         {
             InitializeComponent();
+            toSend = Result;
+            textBoxes = new TextBox[] { tb_Log, tb_Pass, tb_Name, tb_LName, tb_Bd };
+        }
+        private void result_onCkick(object sender, RoutedEventArgs e)
+        {
+            string str = "";
+            foreach(TextBox tb in textBoxes) 
+            {
+                str += tb.Text + "\n";
+            }
+            Result.Text = str;
         }
     }
 }
